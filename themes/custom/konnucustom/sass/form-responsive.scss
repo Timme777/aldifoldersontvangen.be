@@ -1,0 +1,148 @@
+@media screen and (max-width: 1160px){
+  #folder__form{
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1024px){
+  #folder__form{
+    width: 90%;
+  }
+
+  .form-select{
+    flex-direction: column;
+    gap:1.6rem;
+    row-gap: 1.3rem;
+  }
+
+  .form__item--personal--content{
+    .form__item{
+      flex: 18%;
+    }
+
+    .form__item--postalcode, .form__item--phonenumber{
+      flex: 34%;
+    }
+
+    .form__item--city, .form__item--emailaddress{
+      flex: 58.5%;
+    }
+
+    .form__item--street, .form__item--name, .form__item--firstname{
+      flex: 45%;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="date"]::-webkit-calendar-picker-indicator{
+    background-position: 95% -155%;
+  }
+
+  #folder__form{
+    width: 95%;
+    padding: 3rem 0 6rem;
+  }
+  .form__date--wrapper{
+    input{
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+  .form__item--wrapper{
+    flex-direction: column;
+    margin-bottom: 3.6rem;
+  }
+
+  .folder__form--title{
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+ .folder__form--address{
+    row-gap: 0;
+ }
+ .folder__form--right{
+    width: 100%;
+    row-gap: 0;
+    .form__item{
+      margin-bottom: 3.6rem
+    }
+  }
+  .folder__submit--error{
+    margin-top: 1.2rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .nice-select{
+    margin-bottom: 1.6rem;
+  }
+
+  #folder__form--remarks{
+    margin-bottom: 0;
+  }
+
+  .tip-wrapper{
+    align-items: baseline;
+    margin-bottom: 1.8rem;
+  }
+
+  .form__item--date .folder__form--right{
+    max-width: 76.7rem;
+
+  }
+
+  .folder__form--submit{
+    flex-direction: column-reverse;
+    padding: 0;
+    row-gap: 1.6rem;
+    float: none;
+    margin-left: 0;
+  }
+
+
+}
+
+@media screen and (max-width: 500px){
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="date"]::-webkit-calendar-picker-indicator{
+    background-position: 75% -155%;
+  }
+  #folder__form--remarks{
+    width: 100%;
+  }
+  .folder__form--right{
+    .form__item{
+      max-width: 50rem !important;
+      width: 100%;
+      margin-bottom: 3.6rem;
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+
+    .form__item--housenumber, .form__item--box{
+      small{
+        position: inherit;
+        bottom: 0
+      }
+    }
+  }
+  .form__item--box{
+    margin-bottom: 3.6rem !important;
+  }
+
+  .folder__form--submit{
+    display: flex;
+  }
+
+  .folder__form--description{
+    flex-direction: initial;
+  }
+
+  textarea{
+    width: -webkit-fill-available !important;
+  }
+}

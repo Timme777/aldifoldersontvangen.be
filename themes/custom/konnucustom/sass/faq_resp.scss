@@ -1,0 +1,97 @@
+@media screen and (max-width: 1150px){
+  .block-views-blockveelgestelde-vragen-block-1{
+    .fieldset-wrapper {
+      width: 95%;
+      // display: none;
+      .form-item{
+        label{
+          width: fit-content;
+          padding: .8rem 3.5rem;
+        }
+      }
+    }
+
+    .view-content{
+      .views-row{
+        width: 95%;
+      }
+    }
+
+    .faq-switch{
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .block-views-blockveelgestelde-vragen-block-1{
+    .fieldset-wrapper{
+      width: 90%;
+    }
+
+    .view-content{
+      .views-row{
+        width: 90%;
+      }
+    }
+
+    .fieldset-wrapper{
+      .form-radios .form-radios{
+        display: block;
+      }
+
+      .form-item{
+        margin-right: 1.1rem;
+      }
+
+      label{
+        margin-bottom: .9rem;
+      }
+
+      .form-item input:checked + label{
+        padding-bottom: .8rem;
+        border-radius: .8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .block-views-blockveelgestelde-vragen-block-1{
+    .fieldset-wrapper{
+      width: 95%;
+    }
+
+    .view-content{
+      padding-top: 8rem;
+      .views-row{
+        width: 95%;
+      }
+    }
+  }
+
+  .views-field-field-home-veelgestelde-vragen{
+    flex: 0 0 80%;
+  }
+}
+
+@media screen and (max-width: 545px){
+  .block-views-blockveelgestelde-vragen-block-1{
+    .fieldset-wrapper{
+      .form-radios .form-radios{
+        display: flex;
+        flex-direction: column;
+
+        .form-item{
+          margin-right: 0;
+          max-width: 54.5rem;
+          label{
+            margin: 0 auto 1.1rem;
+            // max-width: 54.5rem;
+            width: 76%;
+          }
+        }
+      }
+    }
+  }
+}

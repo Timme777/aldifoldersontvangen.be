@@ -1,0 +1,19 @@
+.page-node-type-submission{
+  .node--unpublished{
+    background-color: #fff;
+  }
+  .node__content{
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+  }
+  footer{
+    display: none;
+  }
+  .field--name-field-submission-language{
+    .field__item{
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.block-views-blockheading-block-1, .block-views-blockheading-block-2{
+  position: relative;
+  // margin-bottom: 9.6rem;
+  .view-content{
+    .views-row{
+      max-width: 116rem;
+      width: 100%;
+      margin: 0 auto;
+      opacity: 1;
+      padding: 7.8rem 0  9.2rem;
+    }
+  }
+
+  .views-field-field-homepage-headerafbeelding{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    background-position: center center;
+    opacity: .12;
+    img{
+      display: none;
+    }
+  }
+
+  .views-field-title{
+    display: none;
+  }
+}
+
+  .tip-wrapper{
+    display: flex;
+    align-items: center;
+    //margin-bottom: 6.7rem;
+
+    span{
+      padding: .8rem;
+      background-color: #C80000;
+      border-radius: .8rem;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-weight: 600;
+      margin-right: .9rem;
+      svg{
+        margin-right: .9rem;
+      }
+    }
+
+    .faq-button{
+      padding-left: .4rem;
+    }
+  }
+  .tip__inner{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .tip{
+    margin-right: 1.5rem;
+    div{
+      float: left;
+    }
+    div:nth-of-type(1){
+      margin-right: .6rem;
+    }
+  }
+  .tip__link{
+    display: inline-block;
+  }
+
+.views-field-field-homepage-slogan{
+  width: 66%;
+  margin-bottom: 1.8rem;
+}
+
+.views-field-field-homepage-ondertitel{
+  margin-bottom: 7.2rem;
+}
+
+

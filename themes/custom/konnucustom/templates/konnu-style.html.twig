@@ -1,0 +1,29 @@
+{% if content %}
+  <div {% if content.left|render is empty and content.right|render is empty %}{{ attributes.addClass('one-column') }}{% else %}{{ attributes.addClass('two-column') }}{% endif %}>
+  {% if content.header %}
+    <div class="konnu__header">
+      {{ content.header }}
+    </div>
+  {% endif %}
+  {% if content.left|render is not empty %}
+    <div class="left__region">
+      {{ content.left }}
+    </div>
+  {% endif %}
+  {% if content.main|render is not empty %}
+    <div {{ region_attributes.main.addClass('main__region') }}>
+      {{ content.main }}
+    </div>
+  {% endif %}
+   {% if content.right|render is not empty %}
+    <div {{ region_attributes.sidebar.addClass('sidebar__right') }}>
+      {{ content.right }}
+    </div>
+  {% endif %}
+  {% if content.footer|render is not empty %}
+    <div class="konnu__footer">
+      {{ content.footer }}
+    </div>
+  {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,6 @@
+<?php
+
+
+function konnuadmin_preprocess_page(&$variables) {
+    $variables['#attached']['library'][] = 'konnuadmin/global-styling';
+}

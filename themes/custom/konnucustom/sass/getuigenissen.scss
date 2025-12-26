@@ -1,0 +1,115 @@
+.block-views-blockgetuigenissen-block-1{
+     margin-bottom: 7.2rem;
+  h2{
+    text-align: center;
+    padding: 7.2rem 0 18rem;
+    margin-bottom: 0;
+    background-color: $lightgreen;
+    margin-bottom: -12.4rem;
+  }
+
+  .view-id-getuigenissen{
+    max-width: 116rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .slick-slider{
+    position: relative;
+    i{
+      position: absolute;
+      top: -5.6rem;
+      cursor: pointer;
+      &:last-of-type{
+        right: 0;
+      }
+      &:first-of-type{
+        right: 3.5rem;
+      }
+    }
+  }
+
+  .slick-slide{
+    // max-width: 37.6rem;
+    // width: 100%;
+    margin: 0 .8rem 1.2rem;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,41,0.1);
+    height: 24rem;
+    background-color: white;
+    border-radius: .8rem;
+
+    .views-row{
+      box-sizing: border-box;
+      padding: 3.6rem 2.4rem 0;
+    }
+
+    .getuigenis-persoon-wrapper{
+      border: none;
+      display: flex;
+      align-content: center;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 4.6rem;
+
+
+      .views-field-nothing{
+        margin-right: 1.2rem;
+      }
+
+      .views-field-field-getuigenis-naam{
+        color: $green;
+        font-weight: 900;
+        margin-right: .6rem;
+      }
+    }
+  }
+
+  .views-field-field-getuigenis-tekst{
+    font-style: italic;
+    .field-content{
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// Progress bar
+.progress {
+  display: block;
+  width: 92%;
+  height: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  // position: absolute;
+  // top: -4.1rem;
+
+  margin-bottom: 4.1rem;
+
+  background-color: transparent;
+  // background-color: background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+  background-image: linear-gradient(to right, #CEEED0, #CEEED0);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+
+  transition: background-size .4s ease-in-out;
+
+  &:after{
+    content: "";
+    width: 100%;
+    background: #CEEED0;
+    height: 1px;
+    position: absolute;
+    top: 1.5px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 5px;
+  padding: 0;
+  margin: -1px;
+  border-radius: 10px;
+  border: 0;
+}

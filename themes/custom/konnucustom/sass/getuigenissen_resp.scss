@@ -1,0 +1,51 @@
+@media screen and (max-width: 1160px){
+  .block-views-blockgetuigenissen-block-1{
+    .view-header{
+      width: 95%;
+      margin: 0 auto;
+    }
+    .slick-slider{
+      i{
+        &:last-of-type{
+          right: 1.5rem;
+        }
+        &:first-of-type{
+          right: 4rem;
+        }
+      }
+    }
+    .progress::after{
+      top: 2.5px;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .block-views-blockgetuigenissen-block-1{
+    .slick-arrow{
+      display: none;
+    }
+    .progress{
+      width: 100%;
+    }
+    .getuigenis-wrapper{
+      margin-bottom: 0;
+      padding-bottom: 5.3rem;
+      background-color: $lightgreen;
+    }
+    .slick-slide{
+      height: fit-content;
+      .views-row{
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 3.6rem 2.4rem 3.6rem;
+      }
+      .views-field-field-getuigenis-tekst{
+        margin-bottom: 3.2rem;
+      }
+      .getuigenis-persoon-wrapper{
+        position: initial;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+name: Konnu Custom admin
+description: 'A theme by the Konnu agency.'
+base theme: gin
+package: Custom
+type: theme
+core: 8.x
+core_version_requirement: ^8 || ^9
+screenshot: "screenshot.png"
+libraries:
+  - konnuadmin/global-styling
+
+regions:
+  branding:           'Branding'
+  navbar:             'Nav bar'
+  header:             'Header'
+  primary_menu:       'Main menu'
+  secondary_menu:     'Secondary menu'
+  highlighted:        'Highlighted'
+  help:               'Help'
+  section_nav:        'Section Nav'
+  breadcrumb:         'Breadcrumb'
+  page_title:         'Page Title'
+  local_tasks:        'Local Tasks'
+  content:            'Content'
+  content_second:     'Content second'
+  sidebar_first:      'Sidebar first'
+  sidebar_second:     'Sidebar second'
+  content_third:      'Content third'
+  content_fullwidth:  'Content (Edge-to-edge)'
+  colophon_first:     'Colophon First Col'
+  colophon_second:    'Colophon Second Col'
+  colophon_third:     'Colophon Third Col'
+  footer:             'Footer'

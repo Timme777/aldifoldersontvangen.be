@@ -1,0 +1,57 @@
+vuejs:
+  version: 2.x
+  js:
+      https://cdn.jsdelivr.net/npm/vue@2.7.8: { type: external }
+
+
+global-styling:
+ version: 1.x
+ css:
+    theme:
+      css/theme/base.css: {}
+ js:
+  js/main.js: {}
+
+ dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+
+fancybox:
+  version: 1.x
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css: {type: external}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js: {type: external}
+
+friconix:
+  version: 1.x
+  js:
+     https://friconix.com/cdn/friconix.js: { type: external }
+
+axios:
+  version: 0.21.1
+  js:
+      https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js: { type: external }
+
+slick:
+  version: 1.9.0
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css: {type: external}
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css: {type: external}
+  js:
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js: { type: external }
+
+flatpickr:
+  version: 4.6.14
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css: {type: external}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js: {type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/nl.min.js: {type: external}
+    https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/plugins/weekSelect/weekSelect.min.js: {type: external }
+

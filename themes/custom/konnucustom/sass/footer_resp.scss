@@ -1,0 +1,44 @@
+@media screen and (max-width: 1160px){
+  .footer-inner{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .footer-inner{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .footer-inner{
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  footer{
+    .region-footer{
+      margin: 0 auto;
+      margin-bottom: 3rem;
+      ul{
+        flex-direction: column;
+        text-align: center;
+      }
+      li{
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+
+  .Konnu_footer_wrapper{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+
+    .Konnu_wrapper{
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+  }
+}

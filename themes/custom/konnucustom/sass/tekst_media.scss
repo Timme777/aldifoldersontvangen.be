@@ -1,0 +1,135 @@
+/* Tekst & Media */
+
+.page-node-type-page{
+    main{
+        margin-bottom: 9.6rem;
+    }
+
+    .layout--onecol{
+        max-width: 116rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.page-nid--234,.page-nid--235,.page-nid--233{
+    .layout--onecol:first-of-type{
+        max-width: 100% !important;
+
+    }
+}
+
+.paragraph--type--tekst-media {
+    .field--name-field-tekst {
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        // h2, h3, h4, h5 {
+        //     margin-bottom: 2.1rem;
+        // }
+
+        ul {
+            padding: 0;
+            padding-left: 2.4rem;
+            margin: 3.2rem 0;
+        }
+
+        li {
+            list-style-position: outside;
+        }
+
+        li::marker {
+            // color: ;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        hr{
+            margin: 1.5em 0;
+            background-color: rgba(132, 131, 116, 0.2);
+            height: 1px;
+            border: none;
+        }
+    }
+
+    .field--type-image{
+        img{
+            max-width: 108.8rem;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .field__item {
+        margin-bottom: 4.6rem;
+    }
+
+    iframe {
+        height: 36rem;
+        max-width: 116rem;
+        width: 100%;
+        margin-top: 3rem;
+    }
+}
+
+
+
+/* Align rechts */
+
+.tekst_lang__content.rechts {
+    .field--name-field-media {
+        float: right;
+        margin-left: 2.8rem;
+        margin-bottom: 0;
+        max-width: 48rem;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+/* Align links */
+
+.tekst_lang__content.links {
+    .field--name-field-media {
+        float: left;
+        margin-right: 2.8rem;
+        margin-bottom: 0rem;
+        max-width: 48rem;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+/* Align center */
+
+.tekst_lang__content.midden {
+    .field--name-field-media {
+        max-width: 100%;
+
+        img {
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .field--name-field-media-image {
+        .field__item {
+            margin-bottom: 2.4rem;
+        }
+    }
+}
+

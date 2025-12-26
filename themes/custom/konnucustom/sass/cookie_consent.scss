@@ -1,0 +1,181 @@
+.cookiesjsr-banner{
+  background-color: $green;
+  width: 100%;
+  padding: 2.5rem 5%;
+}
+.cookiesjsr-banner--info{
+  font-size: 1.4rem;
+  padding: 0 2rem 0 0;
+  margin: 0;
+}
+.cookiesjsr-links{
+  a{
+    text-decoration: underline;
+    font-size: 1.4rem;
+    &:hover{
+      color:#fff;
+       text-decoration: none;
+    }
+  }
+}
+.cookiesjsr-banner--action{
+  button{
+    @include border-radius(24px);
+    font-size: 1.4rem;
+    background-color: #fff;
+    padding: 0 15px;
+    color: $green;
+    &:hover{
+      background-color: $green;
+      color: #fff !important;
+    }
+  }
+  button.important{
+    color: $green;
+  }
+}
+
+
+.path-cookies{
+  .cookies-docs{
+    width: 100%;
+    max-width: 108.8rem;
+    margin: 4rem auto;
+    position: relative;
+    h3{
+      margin-bottom: 2rem;
+    }
+    h4{
+      font-size: 2rem;
+    }
+  }
+  .cookies-docs:last-of-type{
+    margin-bottom: 9.6rem;
+  }
+}
+
+.cookiesjsr-service-group--content{
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  background: #fff !important;
+  color: #848374 !important;
+  .cookiesjsr-links a{
+    font-size: 1.3rem;
+    color: #848374;
+  }
+}
+
+.cookiesjsr-layer--title{
+  font-size: 1.6rem;
+  color: #848374;
+}
+
+.cookiesjsr-service-group--tab{
+  background: #fff !important;
+  font-size: 1.5rem;
+  color: #848374;
+  @include single-transition(all 0.4s ease);
+  &:hover{
+    background: $green !important;
+    color: #fff;
+  }
+}
+.cookiesjsr-service-group:first-of-type{
+  .cookiesjsr-service-group--services{
+    display: none;
+  }
+}
+.cookiesjsr-service-group.active{
+  .cookiesjsr-service-group--tab{
+    background: $green !important;
+    color: #fff;
+   }
+}
+.cookiesjsr-service--description h3{
+  margin-bottom: .2rem;
+  color: #848374;
+}
+.cookiesjsr-service{
+  background-color: #cccccc30;
+  margin-bottom: 1rem;
+  &:hover{
+    background-color: #cccccc30;
+  }
+}
+.cookiesjsr-service--always-on{
+  span{
+     background-color: transparent;
+     color: $green;
+  }
+}
+.cookiesjsr-service:last-of-type{
+  margin-bottom: 0;
+}
+
+.cookiesjsr-switch {
+  &:before{
+    display: none !important;
+  }
+}
+.cookiesjsr-switch.active{
+  background-color: $green;
+}
+.cookiesjsr-layer--footer{
+  border: none;
+  padding-bottom: 4rem;
+  button{
+    background: $green !important;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1.2rem 2rem;
+    @include border-radius(90px);
+    color: #fff !important;
+    text-transform: inherit;
+    border: 1px solid #fff !important;
+    display: block;
+    @include box-sizing(border-box);
+    @include single-transition(background-color 0.4s ease);
+    &:hover{
+      background-color: #fff !important;
+      border-color: $green !important;
+      color: $green !important;
+     }
+  }
+}
+.cookiesjsr-settings{
+  order:3;
+}
+.denyAll{
+  order: 2;
+}
+.cookiesjsr-btn.save{
+  order: 4;
+}
+@media only screen and (min-width: 320px) and (max-width: 1150px) {
+  .path-cookies{
+    .cookies-docs{
+      width: 95%;
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+   .path-cookies{
+    .cookies-docs{
+      width: 90%;
+    }
+  }
+  .cookiesjsr-banner--action{
+    margin-top: 3rem;
+  }
+  .cookiesjsr-layer--footer{
+    padding-bottom: 0;
+    button{
+      position: relative;
+      top: -4rem;
+    }
+  }
+  .cookiesjsr-layer--body{
+    padding-bottom: 6rem;
+  }
+}

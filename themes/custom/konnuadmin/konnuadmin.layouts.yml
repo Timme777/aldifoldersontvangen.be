@@ -1,0 +1,16 @@
+konnu:
+  label: 'Konnu style'
+  category: 'Konnu style'
+  template: templates/konnu-style
+  default_region: main
+  regions:
+    header:
+      label: Header
+    left:
+      label: Sidebar left
+    main:
+      label: Main content
+    right:
+      label: Sidebar right
+    footer:
+      label: Footer

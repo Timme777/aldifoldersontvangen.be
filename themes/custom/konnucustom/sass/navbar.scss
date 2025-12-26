@@ -1,0 +1,112 @@
+header{
+  max-width: 116rem;
+  width: 100%;
+  margin: 0 auto;
+
+  .header-title{
+    font-size: 2rem;
+    color: $default;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    span{
+      color: $green;
+    }
+  }
+}
+
+.header-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 0;
+}
+.header-inner__left{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  svg:nth-of-type(2){
+    display: block;
+    margin-top: 1.2rem;
+  }
+  a{
+    display: block;
+    margin-top: 1rem;
+    margin-left: 0.6rem;
+  }
+}
+.header-buttons{
+  display: flex;
+  position: relative;
+  .faq-button{
+    background-color: $green;
+    color: white;
+    border-radius: .8rem;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding: .8rem 1.6rem;
+
+    &:hover{
+      background-color: $default;
+    }
+  }
+}
+
+/* language button */
+
+
+  .block-dropdown-language{
+    margin-left: 1.8rem;
+    margin-right: 4rem;
+    margin-top: .5rem;
+    .contextual{
+      display: none;
+    }
+  }
+  .dropdown-language-item{
+    border: none !important;
+    position: absolute;
+  }
+  .dropbutton-widget{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    cursor: pointer;
+    padding-right: 1.3rem !important;
+    position: relative;
+
+  }
+
+  .dropbutton{
+    li{
+      border: none !important;
+    }
+  }
+  .dropbutton-arrow{
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-top: .6rem solid black;
+    top: 1.4rem;
+    @include transform(rotate(0));
+    @include single-transition(all 0.4s ease);
+  }
+  .dropbutton-action{
+    span{
+      display: inline-block;
+      font-size: 1.4rem !important;
+      width: 3.6rem;
+    }
+
+    .language-link {
+      font-size: 1.6rem !important;
+      color: $green;
+    }
+  }
+  .dropbutton-wrapper.open{
+    .dropbutton-arrow{
+      border-top-color: black;
+      border-bottom: 0;
+      @include transform(rotate(-180deg));
+    }
+  }

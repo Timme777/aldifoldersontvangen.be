@@ -1,0 +1,26 @@
+.gin--edit-form .page-wrapper__node-edit-form .block-page-title-block {
+    width: 100%;
+    max-width: 1290px;
+    margin: 0 auto;
+}
+.success{
+  background-color: #3ABB44;
+  color:  #fff;
+  text-align:  center;
+  border-radius:  5px;
+  padding: 4px 0;
+}
+.error{
+  background-color: #C83451;
+  color:  #fff;
+  text-align:  center;
+  border-radius:  5px;
+   padding: 4px 0;
+}
+
+.csv-feed.views-data-export-feed .feed-icon{
+  width: 91px;
+  height: 52px;
+  background-size: 82px;
+
+}

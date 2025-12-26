@@ -1,0 +1,53 @@
+<?php
+
+use Drupal\config_pages\Entity\ConfigPages;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Datetime;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+function konnucustom_preprocess_html(&$variables) {
+   if ($node = \Drupal::request()->attributes->get('node')) {
+     $variables['attributes']['class'][] = 'page-nid--'.$node->id();
+   }
+}
+
+function konnucustom_preprocess_page(&$variables) {
+   // Theme name: 'example', library name: 'example'.
+    //$path = \Drupal::service('path.current')->getPath();
+  $nid = "";
+  $type = "";
+
+
+  // $variables['#attached']['library'][] = 'konnucustom/slick';
+  $variables['#attached']['library'][] = 'konnucustom/vuejs';
+  $variables['#attached']['library'][] = 'konnucustom/global-styling';
+  $variables['#attached']['library'][] = 'konnucustom/flatpickr';
+  $variables['#attached']['library'][] = 'konnucustom/friconix';
+  $variables['#attached']['library'][] = 'konnucustom/slick';
+  $variables['#attached']['library'][] = 'konnucustom/axios';
+}
+
+ // Create seperate templates for each content type
+
+function konnucustom_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+    if($hook == 'page'){
+      if ($node = \Drupal::request()->attributes->get('node')) {
+        $node = \Drupal::request()->attributes->get('node');
+        $suggestions[] = 'page__' .$node->bundle();
+      }
+    }
+}
+
+
+
+
+
+
+
+

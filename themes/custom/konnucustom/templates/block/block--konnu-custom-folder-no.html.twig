@@ -1,0 +1,125 @@
+<form id="folder__form_no" method="post" @submit.prevent="submitForm" novalidate autocomplete="off">
+   <div class="form__message" :class="{show:loading === 'show'}">
+      <div class="loader" :class="{hide:loader === 'hide'}">
+         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+         <span>{{'Uw bericht wordt verzonden.'|t}}</span>
+      </div>
+      <div class="result__success" :class="{show:success === 'show'}">
+         <h2>{{'Bedankt'|t}}</h2>
+         <div>{{'We hebben uw bericht goed ontvangen!'|t}}</div>
+      </div>
+   </div>
+   <div class="form__item form__item--wrapper">
+      <label for="folder__form--remarks" class="folder__form--title">{{ 'Ik heb een vraag/opmerking over:'|t }}</label>
+      <div class="form-select folder__form--right">
+         <select id="folder__form--remarks" name="complaintMotiveId" v-model="remarks" @change="showTip(), showDescription()" :disabled="disabled">
+            <option value="8">{{ 'ALDI-folder niet ontvangen'|t }}</option>
+            <option value="16">{{ 'ALDI-folder te laat ontvangen'|t }}</option>
+            <option value="12">{{ 'ALDI-folder ontvangen in een brievenbus met antireclamesticker'|t }}</option>
+            <option value="18">{{ 'Andere'|t }}</option>
+         </select>
+      </div>
+   </div>
+   {# Tip section #}
+
+  {#  Datum #}
+   <div class="form__item form__item--wrapper form__item--date">
+      <label for="folder__form--date" class="folder__form--title" >{{'Week van de bedeling:'|t}}</label>
+      <div class="form__date--wrapper">
+         <input type="text" class="weekPicker" name="week" v-model="week" required :disabled="disabled" />
+         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" class="calendar">
+           <path id="Icon_material-date-range" data-name="Icon material-date-range" d="M9,11H7v2H9Zm4,0H11v2h2Zm4,0H15v2h2Zm2-7H18V2H16V4H8V2H6V4H5A1.991,1.991,0,0,0,3.01,6L3,20a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,19,4Zm0,16H5V9H19Z" transform="translate(-3 -2)" fill="#3abb44"/>
+         </svg>
+      </div>
+   </div>
+   <div class="form__item--wrapper folder_personal">
+      <label for="form__item--personal--content" class="folder__form--title">{{'Mijn persoonlijke gegevens:' |t}}</label>
+      <div class="form__item--personal--content folder__form--right">
+         <div class="folder__form--address">
+        {#  Postcode #}
+          <div class="form__item form__item--postalcode" :class="{invalid:postalCodeValidity === 'invalid'}">
+            <label for="folder__form--postalcode">{{'Postcode'|t}}<span>*</span></label>
+            <input type="number" id="folder__form--postalcode" name="postalCode" v-model.trim="postalCode" @blur="validateCheck(postalCode,'postalCodeValidity'),validateAddress()" required :disabled="disabled" autocomplete="postalCode" />
+            <small v-cloak v-if="postalCodeValidity === 'invalid'">{{"Vul uw postcode in a.u.b."|t}}</small>
+            <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+         {# Gemeente #}
+         <div class="form__item form__item--city " :class="{invalid:cityValidity === 'invalid'}">
+            <label for="folder__form--city">{{'Gemeente'|t}}<span>*</span></label>
+            <input type="text" id="folder__form--city" name="city" v-model.trim="city" @blur="validateCheck(city,'cityValidity'),validateAddress()" required :disabled="disabled" autocomplete="city" />
+            <small v-if="cityValidity === 'invalid'"  v-cloak>{{"Vul uw gemeente in a.u.b."|t}}</small>
+            <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+         {# Straat #}
+         <div class="form__item form__item--street" :class="{invalid:streetValidity === 'invalid'}">
+            <label for="folder__form--street">{{'Straat'|t}}<span>*</span></label>
+            <input type="text" id="folder__form--street" name="street" v-model.trim="street" @blur="validateCheck(street,'streetValidity'),validateAddress()" required :disabled="disabled" autocomplete="steet" />
+            <small v-if="streetValidity === 'invalid'"  v-cloak>{{"Vul uw straatnaam in a.u.b."|t}}</small>
+            <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+         {# Huisnummer #}
+         <div class="form__item form__item--housenumber " :class="{invalid:houseNumberValidity === 'invalid'}">
+            <label for="folder__form--housenumber">{{'Nummer'|t}}<span>*</span></label>
+            <input type="number" id="folder__form--housenumber" name="houseNumber" v-model.trim="houseNumber" @blur="validateCheck(houseNumber,'houseNumberValidity'),validateAddress()" required :disabled="disabled" />
+            <small v-if="houseNumberValidity === 'invalid'" v-cloak>{{"Vul uw huisnummer in a.u.b."|t}}</small>
+            <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+         {# Bus #}
+         <div class="form__item form__item--box">
+            <label for="folder__form--box">{{'Bus'|t}}</label>
+            <input type="text" id="folder__form--box" name="box" v-model.trim="box" :disabled="disabled" />
+         </div>
+       </div>
+       <div class="folder__submit--error">
+         <small v-if="addressValidityCheck === 'invalid'" v-cloak>{{"U heeft een ongeldig adres ingegeven."|t}}</small>
+          <i class="fi-cnsuxl-exclamation-mark"></i>
+      </div>
+         {# Naam #}
+         <div class="form__item form__item--name" :class="{invalid:lastNameValidity === 'invalid'}">
+             <label for="folder__form--name">{{'Naam'|t}}<span>*</span></label>
+             <input type="text" id="folder__form--name" name="lastName" v-model.trim="lastName" @blur="validateCheck(lastName,'lastNameValidity')" required :disabled="disabled" />
+             <small v-if="lastNameValidity === 'invalid'" v-cloak>{{"Vul uw naam in a.u.b."|t}}</small>
+             <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+         <div class=""></div>
+         {# Voornaam #}
+          <div class="form__item form__item--firstname" :class="{invalid:firstNameValidity === 'invalid'}">
+             <label for="folder__form--firstname">{{'Voornaam'|t}}<span>*</span></label>
+             <input type="text" id="folder__form--firstname" name="firstName" v-model.trim="firstName" @blur="validateCheck(firstName,'firstNameValidity')" required :disabled="disabled" />
+             <small v-if="firstNameValidity === 'invalid'" v-cloak>{{"Vul uw voornaam in a.u.b."|t}}</small>
+             <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+         {# E-mail #}
+         <div class="form__item form__item--emailaddress" :class="{invalid:emailValidity === 'invalid'}">
+             <label for="folder__form--emailaddress">{{'E-mail'|t}}<span>*</span></label>
+             <input type="email" id="folder__form--emailaddress" name="emailAddress" v-model.trim="emailAddress" @blur="validateCheck(emailAddress,'emailValidity')" required :disabled="disabled" />
+              <small v-if="emailValidity === 'invalid'" v-cloak>{{"Vul uw e-mailadres in a.u.b."|t}}</small>
+              <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+        {#  Telefoonnnummer #}
+          <div class="form__item form__item--phonenumber" :class="{invalid:phoneValidity === 'invalid'}">
+             <label for="folder__form--phonenumber">{{'Telefoonnummer'|t}}</label>
+             <input type="tel" id="folder__form--phonenumber" name="phoneNumber" v-model.trim="phoneNumber" @blur="validatePhoneNumber(phoneNumber)" :disabled="disabled" />
+             <small v-if="phoneValidity === 'invalid'" v-cloak>{{"Dit telefoonnummer is ongeldig."|t}}</small>
+             <i class="fi-cnsuxl-exclamation-mark"></i>
+         </div>
+      </div>
+
+   </div>
+   {# Desctiption #}
+   <div class="form__item--wrapper form__item" :class="{invalid:descriptionValidity === 'invalid'}">
+       <label for="folder__form--description" class="folder__form--title">{{'Meer uitleg:'|t}}</label>
+       <div class="folder__form--right folder__form--description">
+         <textarea id="folder__form--description" name="description" required rows="4" cols="50" @blur="validateCheck(description,'descriptionValidity')" ></textarea>
+         <small v-if="descriptionValidity === 'invalid' || descriptionValiditySelect === 'invalid'" v-cloak>{{"Geef een boodschap in a.u.b."|t}}</small>
+          <i class="fi-cnsuxl-exclamation-mark"></i>
+       </div>
+   </div>
+   <div class="form__item folder__form--right folder__form--submit" :class="{invalid:addressValidityCheck === 'invalid'}">
+      <button :disabled="disabled">{{'Verzenden'|t}}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <path id="Icon_material-arrow-forward" data-name="Icon material-arrow-forward" d="M14,6,12.59,7.41,18.17,13H6v2H18.17l-5.58,5.59L14,22l8-8Z" transform="translate(-6 -6)" fill="#fff"/>
+      </svg>
+      </button>
+      <small><span>*</span> {{'De met een sterretje gemarkeerde velden zijn verplicht.'|t}}</small>
+   </div>
+</form>
