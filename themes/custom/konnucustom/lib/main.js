@@ -112,7 +112,7 @@
       var days = Math.floor((currentDate - startDate) /(24 * 60 * 60 * 1000));
       var weekNumber = Math.ceil(days / 7);
       var currentYear = currentDate.getFullYear();
-      var maxDate = weekNumber + 1;
+      var maxDate = weekNumber + 2;
       flatpickr.localize(flatpickr.l10ns.nl);
       $(document).ready(function(){
          $(".weekPicker").once('myBehavior').flatpickr({
