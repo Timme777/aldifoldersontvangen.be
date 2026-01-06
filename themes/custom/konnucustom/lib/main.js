@@ -288,6 +288,7 @@
                 var query = "";
                 var resource = "Web - Aldi";
                 var mailSource = 1;
+                var origin = "Consument"
                 if(this.street != ''){
                   query += '+'+this.street;
                 }
@@ -353,7 +354,8 @@
                   distributionWeek: weekNumber,
                   status: '',
                   resource: resource,
-                  mailSource: mailSource
+                  mailSource: mailSource,
+                  origin: origin
                 };
 
                 // check on empty fields
@@ -772,6 +774,7 @@
                 var query = "";
                 var resource = "Web - Aldi Employee";
                 var mailSource = 2;
+                var origin = "Collega - No";
                 if(this.street != ''){
                   query += '+'+this.street;
                 }
@@ -832,7 +835,8 @@
                   phoneNumber: this.phoneNumber,
                   distributionYear: year,
                   distributionWeek: weekNumber,
-                  status: ''
+                  status: '',
+                  origin: origin
                 };
 
                 // check on empty fields
