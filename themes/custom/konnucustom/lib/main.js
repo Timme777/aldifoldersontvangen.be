@@ -1117,6 +1117,7 @@
         const lang = document.getElementsByTagName("html")[0].getAttribute("lang");
         var now = date.toISOString().split('T')[0];
         var acutualYear = date.getFullYear();
+        console.log('ola');
         //this.tripStart = now;
          if(body.hasClass('page-nid--235')){
           var app = new Vue({
@@ -1305,7 +1306,7 @@
                     postalCode: this.postalCode,
                     street: this.street
                   },
-                  complaintMotiveId: complaintId,
+                  complaintMotiveId: '',
                   description: this.description,
                   emailAddress: this.emailAddress,
                   firstName: this.firstName,
@@ -1352,7 +1353,6 @@
                         //this.loading = '';
                       })*/
                       var status = '';
-                      console.log('test');
                       this.createSubmission(dataDrupal, status);
                       this.loader = 'hide';
                       this.success = 'show';
