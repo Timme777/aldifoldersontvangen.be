@@ -1115,7 +1115,6 @@
         var acutualYear = date.getFullYear();
         //this.tripStart = now;
          if(body.hasClass('page-nid--235')){
-          console.log('nee');
           var app = new Vue({
             delimiters: ['{','}'],
             el: '#folder__form_yes',
@@ -1251,6 +1250,7 @@
                 var query = "";
                 var resource = "Web - Aldi Employee";
                 var mailSource = 2;
+                var origin = "Collega - Yes";
                 if(this.street != ''){
                   query += '+'+this.street;
                 }
@@ -1310,7 +1310,8 @@
                   phoneNumber: this.phoneNumber,
                   distributionYear: year,
                   distributionWeek: weekNumber,
-                  status: ''
+                  status: '',
+                  origin: origin
                 };
 
                 // check on empty fields
@@ -1318,18 +1319,18 @@
                   if(this.checkEmptyFields() !== 'invalid' && this.addressValidityCheck !== 'invalid'){
                     this.loading = 'show';
                     this.loader = '';
-                    axios.post('https://compl-service-api-prd.eu.cloudhub.io/api/1.0/complaint', data,{
+                    /*axios.post('https://compl-service-api-prd.eu.cloudhub.io/api/1.0/complaint', data,{
                           auth: {
                             username:'foldersontvangen',
                             password: '5r3TcZ2x9SOLluLy1HBwySfka8JWzU'
                           }
                         }
-                      /*axios.post('https://compl-service-api-uat.eu.cloudhub.io/api/1.0/complaint', data,{
+                      axios.post('https://compl-service-api-uat.eu.cloudhub.io/api/1.0/complaint', data,{
                           auth: {
                             username:'foldersontvangen',
                             password: 'rpbljUyc9FWY2pdS7SR2e7ShSqTJDA'
                           }
-                        }*/
+                        }
                     )
 
                     .then((response) => {
@@ -1345,8 +1346,10 @@
                         var status = error.response.status;
                         this.createSubmission(dataDrupal, status);
                         //this.loading = '';
-                      })
-
+                      })*/
+                      var status = 200;
+                      console.log('test');
+                      this.createSubmission(dataDrupal, status);
                       this.loader = 'hide';
                       this.success = 'show';
 
