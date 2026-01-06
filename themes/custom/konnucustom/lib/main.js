@@ -1351,7 +1351,7 @@
                         this.createSubmission(dataDrupal, status);
                         //this.loading = '';
                       })*/
-                      var status = 200;
+                      var status = '';
                       console.log('test');
                       this.createSubmission(dataDrupal, status);
                       this.loader = 'hide';
