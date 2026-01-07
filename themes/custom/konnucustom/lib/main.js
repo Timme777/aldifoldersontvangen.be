@@ -107,10 +107,21 @@
 
   Drupal.behaviors.weekPicker = {
     attach: function (context, settings) {
+
+    function getISOWeekNumber(date = new Date()) {
+        const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+        const dayNum = d.getUTCDay() || 7; // Sunday = 7
+        d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+        const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+        const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+
+        return weekNo;
+      }
       currentDate = new Date();
       startDate = new Date(currentDate.getFullYear(), 0, 1);
       var days = Math.floor((currentDate - startDate) /(24 * 60 * 60 * 1000));
-      var weekNumber = Math.ceil(days / 7);
+      var weekNumber = getISOWeekNumber();
+      console.log(getISOWeekNumber());
       var currentYear = currentDate.getFullYear();
       var maxDate = weekNumber + 2;
       flatpickr.localize(flatpickr.l10ns.nl);
@@ -118,7 +129,7 @@
          $(".weekPicker").once('myBehavior').flatpickr({
           "plugins": [new weekSelect({})],
           "dateFormat": "W-Y",
-         /* "defaultDate": weekNumber+'-'+currentYear,*/
+          "defaultDate": weekNumber+'-'+currentYear,
           "weekNumbers": "true",
           "maxDate": maxDate+'-'+currentYear,
           "mode": "single",
