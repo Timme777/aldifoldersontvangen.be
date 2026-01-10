@@ -1371,7 +1371,7 @@
                       var base_url = window.location.origin;
                       // send email through custom json page
 
-                    axios.get(base_url+'/json-response?email='+this.emailAddress+'&name='+this.lastName+'&firstname='+this.firstName+'&lang='+lang+'&mailSource='+mailSource)
+                    /*axios.get(base_url+'/json-response?email='+this.emailAddress+'&name='+this.lastName+'&firstname='+this.firstName+'&lang='+lang+'&mailSource='+mailSource)
 
                     .then((response) => {
                       //console.log(response);
@@ -1379,7 +1379,7 @@
                       })
                     .catch((error) =>{
                       console.log(response);
-                      })
+                      })*/
 
                       this.resetFormValues();
                       setTimeout(this.eraseSuccess,3000);
