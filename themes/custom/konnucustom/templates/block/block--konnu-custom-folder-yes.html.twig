@@ -93,6 +93,14 @@
       </div>
 
    </div>
+   <div class="form__item--wrapper form__item" :class="{invalid:descriptionValidity === 'invalid'}">
+      <label for="folder__form--description" class="folder__form--title">{{'Meer uitleg:'|t}}</label>
+       <div class="folder__form--right folder__form--description">
+         <textarea id="folder__form--description" name="description" required rows="4" cols="50" @blur="validateCheck(description,'descriptionValidity')" ></textarea>
+         <small v-if="descriptionValidity === 'invalid' || descriptionValiditySelect === 'invalid'" v-cloak>{{"Geef een boodschap in a.u.b."|t}}</small>
+          <i class="fi-cnsuxl-exclamation-mark"></i>
+       </div>
+   </div>
    <div class="form__item folder__form--right folder__form--submit" :class="{invalid:addressValidityCheck === 'invalid'}">
       <button :disabled="disabled">{{'Verzenden'|t}}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
         <path id="Icon_material-arrow-forward" data-name="Icon material-arrow-forward" d="M14,6,12.59,7.41,18.17,13H6v2H18.17l-5.58,5.59L14,22l8-8Z" transform="translate(-6 -6)" fill="#fff"/>

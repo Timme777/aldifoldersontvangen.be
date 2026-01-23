@@ -121,7 +121,6 @@
       startDate = new Date(currentDate.getFullYear(), 0, 1);
       var days = Math.floor((currentDate - startDate) /(24 * 60 * 60 * 1000));
       var weekNumber = getISOWeekNumber();
-      console.log(getISOWeekNumber());
       var currentYear = currentDate.getFullYear();
       var maxDate = weekNumber + 2;
       flatpickr.localize(flatpickr.l10ns.nl);
@@ -232,8 +231,8 @@
                     .then((result) => {
                         if(/*result.data.items[0].scoring.queryScore == 1 &&*/ result.data.items.length == 1){
                           if(result.data.items[0].scoring.fieldScore.streets !== undefined && result.data.items[0].scoring.fieldScore.houseNumber !== undefined && result.data.items[0].scoring.fieldScore.postalCode !== undefined){
-                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber == '1' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
-                              if(result.data.items[0].scoring.fieldScore.city >= '0.98' || result.data.items[0].scoring.fieldScore.district >= '0.98'){
+                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber >= '0.90' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
+                              if(result.data.items[0].scoring.fieldScore.city >= '0.90' || result.data.items[0].scoring.fieldScore.district >= '0.90'){
                                 this.addressValidityCheck = "";
                                 $('.folder__form--address').removeClass('invalid');
                                 $('.folder__submit--error').removeClass('invalid');
@@ -718,8 +717,8 @@
                     .then((result) => {
                         if(/*result.data.items[0].scoring.queryScore == 1 &&*/ result.data.items.length == 1){
                           if(result.data.items[0].scoring.fieldScore.streets !== undefined && result.data.items[0].scoring.fieldScore.houseNumber !== undefined && result.data.items[0].scoring.fieldScore.postalCode !== undefined){
-                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber == '1' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
-                              if(result.data.items[0].scoring.fieldScore.city >= '0.98' || result.data.items[0].scoring.fieldScore.district >= '0.98'){
+                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber >= '0.90' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
+                              if(result.data.items[0].scoring.fieldScore.city >= '0.90' || result.data.items[0].scoring.fieldScore.district >= '0.90'){
                                 this.addressValidityCheck = "";
                                 $('.folder__form--address').removeClass('invalid');
                                 $('.folder__submit--error').removeClass('invalid');
@@ -1128,7 +1127,6 @@
         const lang = document.getElementsByTagName("html")[0].getAttribute("lang");
         var now = date.toISOString().split('T')[0];
         var acutualYear = date.getFullYear();
-        console.log('ola');
         //this.tripStart = now;
          if(body.hasClass('page-nid--235')){
           var app = new Vue({
@@ -1199,8 +1197,8 @@
                     .then((result) => {
                         if(/*result.data.items[0].scoring.queryScore == 1 &&*/ result.data.items.length == 1){
                           if(result.data.items[0].scoring.fieldScore.streets !== undefined && result.data.items[0].scoring.fieldScore.houseNumber !== undefined && result.data.items[0].scoring.fieldScore.postalCode !== undefined){
-                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber == '1' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
-                              if(result.data.items[0].scoring.fieldScore.city >= '0.98' || result.data.items[0].scoring.fieldScore.district >= '0.98'){
+                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber >= '0.90' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
+                              if(result.data.items[0].scoring.fieldScore.city >= '0.90' || result.data.items[0].scoring.fieldScore.district >= '0.90'){
                                 this.addressValidityCheck = "";
                                 $('.folder__form--address').removeClass('invalid');
                                 $('.folder__submit--error').removeClass('invalid');
