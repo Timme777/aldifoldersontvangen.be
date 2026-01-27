@@ -1191,7 +1191,7 @@
             },
             methods: {
               validateAddress(){
-                if(this.street != '' && this.houseNumber != '' && this.postalCode != '' && this.city != ''){
+                if(this.street != '' && this.postalCode != '' && this.city != ''){
                   var query = this.street+"+"+this.houseNumber+'+'+this.postalCode+'+'+this.city;
                   axios.get('https://geocode.search.hereapi.com/v1/geocode?q='+query+'&apiKey=S6IqEdKtcqfofhERyc5Osze-EGP3ri8ZlqDTJQaVsmE')
                     .then((result) => {
