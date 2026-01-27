@@ -1195,9 +1195,10 @@
                   var query = this.street+"+"+this.houseNumber+'+'+this.postalCode+'+'+this.city;
                   axios.get('https://geocode.search.hereapi.com/v1/geocode?q='+query+'&apiKey=S6IqEdKtcqfofhERyc5Osze-EGP3ri8ZlqDTJQaVsmE')
                     .then((result) => {
+                      console.log(result);
                         if(/*result.data.items[0].scoring.queryScore == 1 &&*/ result.data.items.length == 1){
-                          if(result.data.items[0].scoring.fieldScore.streets !== undefined && result.data.items[0].scoring.fieldScore.houseNumber !== undefined && result.data.items[0].scoring.fieldScore.postalCode !== undefined){
-                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.houseNumber >= '0.90' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
+                          if(result.data.items[0].scoring.fieldScore.streets !== undefined && result.data.items[0].scoring.fieldScore.postalCode !== undefined){
+                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] == '1' && result.data.items[0].scoring.fieldScore.postalCode == '1'){
                               if(result.data.items[0].scoring.fieldScore.city >= '0.90' || result.data.items[0].scoring.fieldScore.district >= '0.90'){
                                 this.addressValidityCheck = "";
                                 $('.folder__form--address').removeClass('invalid');
@@ -1444,14 +1445,14 @@
               },
               checkEmptyFields(){
                 var statusEmptyFields = "";
-                if(this.firstName === "" ){
+                /*if(this.firstName === "" ){
                   this.firstNameValidity = 'invalid';
                   statusEmptyFields = 'invalid';
                 }
                 if(this.lastName === ""){
                    this.lastNameValidity = 'invalid';
                    statusEmptyFields = 'invalid';
-                }
+                }*/
                 if(this.postalCode === ""){
                    this.postalCodeValidity = 'invalid';
                    statusEmptyFields = 'invalid';
@@ -1464,14 +1465,14 @@
                    this.streetValidity = 'invalid';
                    statusEmptyFields = 'invalid';
                 }
-                if(this.houseNumber === ""){
+                /*if(this.houseNumber === ""){
                    this.houseNumberValidity = 'invalid';
                    statusEmptyFields = 'invalid';
                 }
                 if(this.emailAddress === "" || this.validEmail(this.emailAddress) == false){
                    this.emailValidity = 'invalid';
                    statusEmptyFields = 'invalid';
-                }
+                }*/
                 if(this.descriptionValidity === 'invalid'){
                    statusEmptyFields = 'invalid';
                 }

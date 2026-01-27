@@ -46,8 +46,8 @@
          </div>
          {# Huisnummer #}
          <div class="form__item form__item--housenumber " :class="{invalid:houseNumberValidity === 'invalid'}">
-            <label for="folder__form--housenumber">{{'Nummer'|t}}<span>*</span></label>
-            <input type="number" id="folder__form--housenumber" name="houseNumber" v-model.trim="houseNumber" @blur="validateCheck(houseNumber,'houseNumberValidity'),validateAddress()" required :disabled="disabled" />
+            <label for="folder__form--housenumber">{{'Nummer'|t}}</label>
+            <input type="number" id="folder__form--housenumber" name="houseNumber" v-model.trim="houseNumber" @blur="validateAddress()" required :disabled="disabled" />
             <small v-if="houseNumberValidity === 'invalid'" v-cloak>{{"Vul uw huisnummer in a.u.b."|t}}</small>
             <i class="fi-cnsuxl-exclamation-mark"></i>
          </div>
