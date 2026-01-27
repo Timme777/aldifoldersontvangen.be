@@ -1121,6 +1121,7 @@
     attach: function (context, settings) {
        $(context).find('#folder__form_yes').once('folderFormBehavior').each(function () {
       //$(document, context).once('myBehavior').each( function() {
+        console.log('test');
         var body = $('body');
         let date = new Date();
         var query = "";
