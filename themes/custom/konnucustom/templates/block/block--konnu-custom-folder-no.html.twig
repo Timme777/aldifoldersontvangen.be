@@ -58,9 +58,9 @@
             <i class="fi-cnsuxl-exclamation-mark"></i>
          </div>
          {# Huisnummer #}
-         <div class="form__item form__item--housenumber " :class="{invalid:houseNumberValidity === 'invalid'}">
-            <label for="folder__form--housenumber">{{'Nummer'|t}}<span>*</span></label>
-            <input type="number" id="folder__form--housenumber" name="houseNumber" v-model.trim="houseNumber" @blur="validateCheck(houseNumber,'houseNumberValidity'),validateAddress()" required :disabled="disabled" />
+         <div class="form__item form__item--housenumber ">
+            <label for="folder__form--housenumber">{{'Nummer'|t}}</label>
+            <input type="number" id="folder__form--housenumber" name="houseNumber" v-model.trim="houseNumber" :disabled="disabled" />
             <small v-if="houseNumberValidity === 'invalid'" v-cloak>{{"Vul uw huisnummer in a.u.b."|t}}</small>
             <i class="fi-cnsuxl-exclamation-mark"></i>
          </div>
@@ -75,24 +75,24 @@
           <i class="fi-cnsuxl-exclamation-mark"></i>
       </div>
          {# Naam #}
-         <div class="form__item form__item--name" :class="{invalid:lastNameValidity === 'invalid'}">
-             <label for="folder__form--name">{{'Naam'|t}}<span>*</span></label>
-             <input type="text" id="folder__form--name" name="lastName" v-model.trim="lastName" @blur="validateCheck(lastName,'lastNameValidity')" required :disabled="disabled" />
+         <div class="form__item form__item--name">
+             <label for="folder__form--name">{{'Naam'|t}}</label>
+             <input type="text" id="folder__form--name" name="lastName" v-model.trim="lastName" :disabled="disabled" />
              <small v-if="lastNameValidity === 'invalid'" v-cloak>{{"Vul uw naam in a.u.b."|t}}</small>
              <i class="fi-cnsuxl-exclamation-mark"></i>
          </div>
          <div class=""></div>
          {# Voornaam #}
-          <div class="form__item form__item--firstname" :class="{invalid:firstNameValidity === 'invalid'}">
-             <label for="folder__form--firstname">{{'Voornaam'|t}}<span>*</span></label>
-             <input type="text" id="folder__form--firstname" name="firstName" v-model.trim="firstName" @blur="validateCheck(firstName,'firstNameValidity')" required :disabled="disabled" />
+          <div class="form__item form__item--firstname">
+             <label for="folder__form--firstname">{{'Voornaam'|t}}</label>
+             <input type="text" id="folder__form--firstname" name="firstName" v-model.trim="firstName" :disabled="disabled" />
              <small v-if="firstNameValidity === 'invalid'" v-cloak>{{"Vul uw voornaam in a.u.b."|t}}</small>
              <i class="fi-cnsuxl-exclamation-mark"></i>
          </div>
          {# E-mail #}
-         <div class="form__item form__item--emailaddress" :class="{invalid:emailValidity === 'invalid'}">
-             <label for="folder__form--emailaddress">{{'E-mail'|t}}<span>*</span></label>
-             <input type="email" id="folder__form--emailaddress" name="emailAddress" v-model.trim="emailAddress" @blur="validateCheck(emailAddress,'emailValidity')" required :disabled="disabled" />
+         <div class="form__item form__item--emailaddress">
+             <label for="folder__form--emailaddress">{{'E-mail'|t}}</label>
+             <input type="email" id="folder__form--emailaddress" name="emailAddress" v-model.trim="emailAddress" :disabled="disabled" />
               <small v-if="emailValidity === 'invalid'" v-cloak>{{"Vul uw e-mailadres in a.u.b."|t}}</small>
               <i class="fi-cnsuxl-exclamation-mark"></i>
          </div>
