@@ -469,9 +469,7 @@
                   break;
                  }
                  this.tip = tips[this.remarks];
-                if(this.remarks == '16'){
-                    this.descriptionValiditySelect = 'invalid';
-                 }else if(this.remarks == '17'){
+                 if(this.remarks == '17'){
                     this.descriptionValiditySelect = 'invalid';
                  }else if(this.remarks == '18'){
                     this.descriptionValiditySelect = 'invalid';
@@ -596,7 +594,7 @@
                        this.emailValidity = 'invalid';
                       break;
                     case 'descriptionValidity':
-                      if(this.remarks == "16" || this.remarks == "17" || this.remarks == "18" && this.description == ""){
+                      if(this.remarks == "17" || this.remarks == "18" && this.description == ""){
                        this.descriptionValidity = 'invalid';
                       }
                       break;
@@ -951,9 +949,7 @@
                   break;
                  }
                  this.tip = tips[this.remarks];
-                if(this.remarks == '16'){
-                    this.descriptionValiditySelect = 'invalid';
-                 }else if(this.remarks == '17'){
+                if(this.remarks == '17'){
                     this.descriptionValiditySelect = 'invalid';
                  }else if(this.remarks == '18'){
                     this.descriptionValiditySelect = 'invalid';
@@ -1062,7 +1058,7 @@
                        this.emailValidity = 'invalid';
                       break;
                     case 'descriptionValidity':
-                      if(this.remarks == "16" || this.remarks == "17" || this.remarks == "18" && this.description == ""){
+                      if(this.remarks == "17" || this.remarks == "18" && this.description == ""){
                        this.descriptionValidity = 'invalid';
                       }
                       break;
