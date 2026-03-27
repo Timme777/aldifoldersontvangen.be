@@ -713,9 +713,9 @@
                   var query = this.street+"+"+this.postalCode+'+'+this.city;
                   axios.get('https://geocode.search.hereapi.com/v1/geocode?q='+query+'&apiKey=S6IqEdKtcqfofhERyc5Osze-EGP3ri8ZlqDTJQaVsmE')
                     .then((result) => {
-                         if(/*result.data.items[0].scoring.queryScore == 1 &&*/ result.data.items.length == 1){
-                          if(result.data.items[0].scoring.fieldScore.streets !== undefined && result.data.items[0].scoring.fieldScore.postalCode !== undefined){
-                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] >= '0.2' && result.data.items[0].scoring.fieldScore.houseNumber >= '0.50' && result.data.items[0].scoring.fieldScore.postalCode >= '0.5'){
+                        if(/*result.data.items[0].scoring.queryScore == 1 &&*/ result.data.items.length >= 1){
+                          if(result.data.items[0].scoring.fieldScore.streets !== undefined /*&& result.data.items[0].scoring.fieldScore.houseNumber !== undefined */&& result.data.items[0].scoring.fieldScore.postalCode !== undefined){
+                            if(result.data.items.length > 0 && result.data.items[0].scoring.fieldScore.streets[0] >= '0.2' && result.data.items[0].scoring.fieldScore.postalCode >= '0.5'){
                               //if(result.data.items[0].scoring.fieldScore.city >= '0.90' || result.data.items[0].scoring.fieldScore.district >= '0.90'){
                                 this.addressValidityCheck = "";
                                 $('.folder__form--address').removeClass('invalid');
